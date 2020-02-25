@@ -1,0 +1,9 @@
+<!--pages/Joke/index.wxml-->
+<text>pages/Joke/index.wxml</text>
+<!-- <view wx:for="{{contents}}" wx:key='key'> -->
+<!-- <text wx:for="{{contents}}" wx:key='key'>item.content\n</text> -->
+<!-- </view> -->
+<view wx:for='{{contents}}'>
+  <view>{{item.content}}</view>
+</view>
+<!-- <view></view> -->

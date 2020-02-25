@@ -1,0 +1,3 @@
+<!--pages/Login/login.wxml-->
+<text>pages/Login/login.wxml</text>
+<button bindtap="getCooikes">获取cookie</button>
