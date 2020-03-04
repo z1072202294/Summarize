@@ -33,8 +33,20 @@ App({
       }
     })
   },
+  setAuthStatus:function(status){
+    console.log('set auth status : '+ status)
+    if (status == true || status == false){
+      this.globalData.auth.isAuthorized = status
+    }else{
+      console.log('invalid status')
+    }
+  },
   globalData: {
     userInfo: null,
-    app_url:'http://v.juhe.cn/joke/content/list.php?sort=asc&page=2&pagesize=10&time=1418816972&key=f1956f725c237b265928531a3b0f416a'
+    serverUrl: 'http://127.0.0.1:8000',
+    apiVersion:'/api/v1.0',
+    auth:{
+      isAuthorized:false
+    }
   }
 })

@@ -1,5 +1,6 @@
 // pages/Login/login.js
 const cookies = require('../../utils/util.js')
+const app = getApp()
 Page({
 
   /**
@@ -14,7 +15,48 @@ Page({
       success: function(res){
         var cookie = cookies.getSessionIDFromResponse(res)
         console.log(cookie)
+        cookies.setCookiesToStorage(cookie)
       }
+    })
+  },
+  sendCookie:function(){
+    var cookie = cookies.getCookiesTostorage()
+    var headers = {}
+    headers.Cookie = cookie
+    wx.request({
+      url: 'http://127.0.0.1:8000/api/v1.0/service/cookie',
+      header: headers,
+      success: function(res){
+        console.log(res)
+        console.log(res.data)
+      }
+    })
+  },
+  authorize:function(){
+    wx.login({
+      success: function(res) {
+
+        wx.request({
+          url: 'http://127.0.0.1:8000/api/v1.0/service/authorize',
+          method: 'POST',
+          data:{
+            code:res.code,
+            nickname: app.globalData.userInfo.nickName
+          },
+          success: function(res){
+            wx.showToast({
+              title: '认证成功',
+            })
+            // 获取返回来的 session
+            var cookie = cookies.getSessionIDFromResponse(res)
+            console.log(cookie)
+            cookies.setCookiesToStorage(cookie)
+            console.log(app.globalData.userInfo)
+          }
+        })
+      },
+      fail: function(res) {},
+      complete: function(res) {},
     })
   },
 

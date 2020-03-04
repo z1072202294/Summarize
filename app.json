@@ -8,7 +8,10 @@
     "pages/zfb/index",
     "pages/weather/index",
     "pages/Joke/index",
-    "pages/Login/login"
+    "pages/Login/login",
+    "pages/homepage/homepage",
+    "pages/picker/picker",
+    "pages/stock/stock"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -35,6 +38,10 @@
       {
         "pagePath":"pages/Login/login" ,
         "text": "登录"
+      },
+      {
+        "pagePath": "pages/homepage/homepage",
+        "text": "个人"
       }      
     ]
   }
