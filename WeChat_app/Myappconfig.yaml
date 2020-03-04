@@ -1,0 +1,31 @@
+publish:
+  - app:
+      category: life
+      application: Weather
+      name: 天气
+      publish_date: 2020-02-18
+      url: service/weather
+      desc: This is a weather app.
+  - app:
+      category: life
+      application: WeChat
+      name: 微信
+      publish_date: 2020-03-18
+      url: service/WeChat
+      desc: This is a WeChat app.
+  - app:
+      category: life
+      application: Alipay
+      name: 支付宝
+      publish_date: 2019-02-18
+      url: service/Alipay
+      desc: This is a Alipay app.
+  - app:
+      category: life
+      application: Joke
+      name: 笑话
+      publish_date: 2020-02-24
+      url: service/Joke
+      desc: This is a Joke app.
+develope:
+  - app:
