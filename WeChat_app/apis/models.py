@@ -41,6 +41,7 @@ class User(models.Model):
     focus_constellations = models.TextField(default='[]')
     # 关注的股票
     focus_stocks = models.TextField(default='[]')
+    menu = models.ManyToManyField(App)
 
     def __str__(self):
         return self.nickname
